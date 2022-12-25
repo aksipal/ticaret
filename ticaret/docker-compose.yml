@@ -1,0 +1,24 @@
+services:
+  postgres:
+    container_name: ticaret
+    image: postgres
+    environment:
+      POSTGRES_USER: ticaret
+      POSTGRES_PASSWORD: ticaret
+      PGDATA: /data/postgres
+    volumes:
+      - ./data./postgres
+    ports:
+      - "5051:5432"
+
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin4@pgadmin.org}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+    volumes:
+      - ./var./lib./pgadmin
+    ports:
+      - "5050:80"

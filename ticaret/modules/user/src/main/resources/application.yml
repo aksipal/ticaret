@@ -1,0 +1,17 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: user
+  datasource:
+    password: 'ticaret'
+    url: jdbc:postgresql://0.0.0.0:5051/user
+    username: 'ticaret'
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
